@@ -10,7 +10,7 @@ const reviewCollection = defineCollection({
         hero: image(),
         pubDate: z.date(),
         tags: z.array(z.string()),
-        rating: z.number().max(5, "Max rating is 5.").min(0, "Minimum rating is 0"),
+        rating: z.number().max(4, "Max rating is 4.").min(1, "Minimum rating is 1."),
         apititle: z.string().optional(),
         similarGames: z.array(reference('reviews')).optional(),
         relevantBlogPosts: z.array(reference('posts')).optional(),
@@ -27,7 +27,6 @@ const postCollection = defineCollection({
         hero: image(),
         pubDate: z.date(),
         tags: z.array(z.string()),
-        rating: z.number().max(5, "Max rating is 5.").min(0, "Minimum rating is 0"),
     })
 });
 
